@@ -1,0 +1,267 @@
+.header {
+  min-height: 96px;
+
+  display: grid;
+
+  grid-template-columns:
+    180px minmax(280px, 650px) 190px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 28px;
+
+  padding: 0 7%;
+
+  background: #fff9f7;
+
+  border-bottom: 1px solid #f0dfe4;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  border: 2px solid #d9899b;
+
+  background: #f4dce2;
+
+  box-shadow:
+    0 4px 14px
+    rgba(217, 137, 155, 0.18);
+
+  text-decoration: none;
+}
+
+
+.logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+}
+
+
+/* =========================
+   BUSCADOR
+========================= */
+
+.search {
+  width: 100%;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #ead8dd;
+
+  border-radius: 8px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.search:focus-within {
+  border-color: #d9899b;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(217, 137, 155, 0.12);
+}
+
+
+.search input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 14px 17px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #211b1d;
+
+  font-size: 13px;
+}
+
+
+.search input::placeholder {
+  color: #a69a9d;
+}
+
+
+.search button {
+  width: 56px;
+
+  border: none;
+
+  background: #211b1d;
+
+  color: #f2a7b7;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.search button:hover {
+  background: #a94f66;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   ACCIONES
+========================= */
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.whatsapp-link {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 0 22px;
+
+  background: #211b1d;
+
+  color: #f2a7b7;
+
+  border: 1px solid #d9899b;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.whatsapp-link:hover {
+  background: #d9899b;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .header {
+    grid-template-columns:
+      1fr auto;
+
+    padding: 12px 20px;
+
+    gap: 14px;
+  }
+
+
+  .logo {
+    width: 72px;
+    height: 72px;
+  }
+
+
+  .search {
+    grid-column: 1 / -1;
+
+    grid-row: 2;
+  }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 500px) {
+
+  .header {
+    grid-template-columns:
+      1fr auto;
+
+    padding: 10px 14px;
+  }
+
+
+  .logo {
+    width: 64px;
+    height: 64px;
+  }
+
+
+  .whatsapp-link {
+    min-height: 40px;
+
+    padding: 0 14px;
+
+    font-size: 12px;
+  }
+
+
+  .search input {
+    padding: 12px 14px;
+
+    font-size: 12px;
+  }
+
+
+  .search button {
+    width: 48px;
+  }
+
+}

@@ -1,0 +1,55 @@
+<section
+  class="ofertas"
+  id="ofertas"
+>
+
+  <div class="section-header">
+
+    <span>
+      OPORTUNIDADES
+    </span>
+
+    <h2>
+      Prendas en oferta
+    </h2>
+
+    <p>
+      Aprovechá precios especiales
+      en productos seleccionados.
+    </p>
+
+  </div>
+
+
+  @if (cargando) {
+
+    <div class="estado-productos">
+      Cargando ofertas...
+    </div>
+
+  } @else if (ofertas.length === 0) {
+
+    <div class="estado-productos">
+      No hay ofertas disponibles por el momento.
+    </div>
+
+  } @else {
+
+    <div class="products-container">
+
+      @for (
+        producto of ofertas;
+        track producto.id
+      ) {
+
+        <app-product-card
+          [producto]="producto"
+        />
+
+      }
+
+    </div>
+
+  }
+
+</section>

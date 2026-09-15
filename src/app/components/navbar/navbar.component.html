@@ -1,0 +1,61 @@
+<nav class="navbar">
+
+  <button
+    class="menu-button"
+    (click)="toggleMenu()"
+    aria-label="Abrir menú"
+  >
+    ☰
+  </button>
+
+  <div
+    class="nav-links"
+    [class.open]="menuOpen"
+  >
+
+    <a
+      href="#inicio"
+      (click)="closeMenu()"
+    >
+      Inicio
+    </a>
+
+    <a
+      href="#productos"
+      (click)="closeMenu()"
+    >
+      Catálogo
+    </a>
+
+    <a
+      href="#nosotros"
+      (click)="closeMenu()"
+    >
+      Sobre Fran
+    </a>
+
+    <a
+      href="#redes"
+      (click)="closeMenu()"
+    >
+      Redes
+    </a>
+
+    <a
+      href="#contacto"
+      (click)="closeMenu()"
+    >
+      Contacto
+    </a>
+
+    <a
+      href="#ofertas"
+      class="oferta"
+      (click)="closeMenu()"
+    >
+      Ofertas
+    </a>
+
+  </div>
+
+</nav>

@@ -1,0 +1,55 @@
+<section
+  class="nuevos"
+  id="nuevos"
+>
+
+  <div class="section-header">
+
+    <span>
+      RECIÉN LLEGADOS
+    </span>
+
+    <h2>
+      Nuevos ingresos
+    </h2>
+
+    <p>
+      Descubrí los últimos modelos
+      incorporados a nuestro catálogo.
+    </p>
+
+  </div>
+
+
+  @if (cargando) {
+
+    <div class="estado-productos">
+      Cargando nuevos ingresos...
+    </div>
+
+  } @else if (nuevos.length === 0) {
+
+    <div class="estado-productos">
+      No hay nuevos ingresos por el momento.
+    </div>
+
+  } @else {
+
+    <div class="products-container">
+
+      @for (
+        producto of nuevos;
+        track producto.id
+      ) {
+
+        <app-product-card
+          [producto]="producto"
+        />
+
+      }
+
+    </div>
+
+  }
+
+</section>

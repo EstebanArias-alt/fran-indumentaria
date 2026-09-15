@@ -1,0 +1,176 @@
+<article class="product-card">
+
+  <a
+    [routerLink]="[
+      '/producto',
+      producto.slug
+    ]"
+    class="product-image"
+  >
+
+    <img
+      [src]="imagenPrincipal"
+      [alt]="producto.nombre"
+      (error)="imagenError($event)"
+    >
+
+    @if (producto.oferta) {
+      <span class="badge">
+        OFERTA
+      </span>
+    }
+
+    @if (producto.nuevo) {
+      <span class="badge nuevo">
+        NUEVO
+      </span>
+    }
+
+    @if (!producto.stock) {
+      <span class="badge sin-stock">
+        SIN STOCK
+      </span>
+    }
+
+  </a>
+
+
+  <div class="product-info">
+
+    <span class="categoria">
+      {{ producto.categoria }}
+    </span>
+
+
+    <h3>
+
+      <a
+        [routerLink]="[
+          '/producto',
+          producto.slug
+        ]"
+      >
+        {{ producto.nombre }}
+      </a>
+
+    </h3>
+
+
+    <!-- ========================= -->
+    <!-- PRECIO -->
+    <!-- ========================= -->
+
+    @if (producto.precio) {
+
+      <div class="precios">
+
+        @if (
+          producto.oferta &&
+          (
+            producto.precioAnterior ||
+            producto.precio_anterior
+          )
+        ) {
+
+          <span class="precio-anterior">
+
+            $
+            {{
+              (
+                producto.precioAnterior ||
+                producto.precio_anterior
+              )
+              | number:'1.0-0'
+            }}
+
+          </span>
+
+        }
+
+
+        <div class="precio-actual">
+
+          <strong class="precio">
+
+            $
+            {{
+              producto.precio
+              | number:'1.0-0'
+            }}
+
+          </strong>
+
+
+          @if (porcentajeDescuento) {
+
+            <span class="descuento">
+              -{{ porcentajeDescuento }}% OFF
+            </span>
+
+          }
+
+        </div>
+
+      </div>
+
+    } @else {
+
+      <strong class="precio">
+        Consultar precio
+      </strong>
+
+    }
+
+
+    <!-- ========================= -->
+    <!-- TALLES -->
+    <!-- ========================= -->
+
+    @if (
+      producto.talles &&
+      producto.talles.length > 0
+    ) {
+
+      <div class="talles-card">
+
+        <span class="talles-label">
+          Talles:
+        </span>
+
+        <span class="talles-valores">
+
+          @if (esArrayTalles) {
+            {{ tallesTexto }}
+          } @else {
+            {{ producto.talles }}
+          }
+
+        </span>
+
+      </div>
+
+    }
+
+
+    <!-- ========================= -->
+    <!-- WHATSAPP -->
+    <!-- ========================= -->
+
+    <a
+      class="consultar"
+      [class.sin-stock-btn]="!producto.stock"
+      [href]="whatsappUrl"
+      target="_blank"
+    >
+
+      @if (producto.stock) {
+        Consultar por WhatsApp
+      } @else {
+        Consultar disponibilidad
+      }
+
+    </a>
+
+  </div>
+
+</article>

@@ -1,0 +1,64 @@
+<section
+  class="productos"
+  id="productos"
+>
+
+  <div class="section-header">
+
+    <span>
+      CATÁLOGO
+    </span>
+
+    <h2>
+      Nuestras prendas
+    </h2>
+
+    <p>
+      Descubrí algunos de nuestros
+      productos disponibles.
+    </p>
+
+  </div>
+
+
+  @if (cargando) {
+
+    <div class="estado-productos">
+      Cargando productos...
+    </div>
+
+  } @else if (productosDestacados.length === 0) {
+
+    <div class="estado-productos">
+      No hay productos disponibles por el momento.
+    </div>
+
+  } @else {
+
+    <div class="products-container">
+
+      @for (
+        producto of productosDestacados;
+        track producto.id
+      ) {
+
+        <app-product-card
+          [producto]="producto"
+        />
+
+      }
+
+    </div>
+
+  }
+
+
+  <div class="ver-todos">
+
+    <a href="/productos">
+      Ver catálogo completo →
+    </a>
+
+  </div>
+
+</section>

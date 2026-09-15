@@ -1,0 +1,469 @@
+.slider {
+  width: 100%;
+  height: 500px;
+
+  position: relative;
+  overflow: hidden;
+
+  background: #211b1d;
+}
+
+
+/* =========================
+   SLIDES
+========================= */
+
+.slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.7s ease,
+    visibility 0.7s ease;
+}
+
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.slide img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(33, 27, 29, 0.88) 0%,
+      rgba(33, 27, 29, 0.64) 38%,
+      rgba(33, 27, 29, 0.22) 70%,
+      rgba(33, 27, 29, 0.05) 100%
+    );
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.slide-content {
+  position: absolute;
+
+  top: 50%;
+  left: 7%;
+
+  transform: translateY(-50%);
+
+  max-width: 620px;
+
+  z-index: 5;
+
+  color: #ffffff;
+}
+
+
+.slide-content span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #f2a7b7;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+
+.slide-content h1 {
+  margin: 0 0 18px;
+
+  max-width: 650px;
+
+  font-size:
+    clamp(42px, 5vw, 72px);
+
+  font-weight: 800;
+
+  line-height: 1.02;
+
+  letter-spacing: -1px;
+
+  color: #ffffff;
+}
+
+
+.slide-content p {
+  max-width: 520px;
+
+  margin: 0 0 30px;
+
+  color: #f7eef1;
+
+  font-size: 18px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.slide-content a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 0 28px;
+
+  background: #d9899b;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.slide-content a:hover {
+  background: #a94f66;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(169, 79, 102, 0.28);
+}
+
+
+/* =========================
+   FLECHAS
+========================= */
+
+.arrow {
+  width: 48px;
+  height: 48px;
+
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 20;
+
+  transform: translateY(-50%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background:
+    rgba(33, 27, 29, 0.58);
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.arrow:hover {
+  background: #d9899b;
+
+  color: #ffffff;
+}
+
+
+.previous {
+  left: 22px;
+}
+
+
+.next {
+  right: 22px;
+}
+
+
+/* =========================
+   INDICADORES
+========================= */
+
+.indicators {
+  position: absolute;
+
+  z-index: 20;
+
+  left: 50%;
+  bottom: 20px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.indicators button {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.indicators button.active {
+  width: 25px;
+
+  border-radius: 10px;
+
+  background: #d9899b;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .slider {
+    height: 500px;
+  }
+
+
+  .slide-content {
+    left: 6%;
+
+    max-width: 520px;
+  }
+
+
+  .slide-content h1 {
+    font-size:
+      clamp(40px, 7vw, 56px);
+  }
+
+
+  .slide-content p {
+    max-width: 440px;
+
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .slider {
+    height: 560px;
+  }
+
+
+  .slide img {
+    object-position: center top;
+  }
+
+
+  .overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(33, 27, 29, 0.92) 0%,
+        rgba(33, 27, 29, 0.68) 45%,
+        rgba(33, 27, 29, 0.12) 100%
+      );
+  }
+
+
+  .slide-content {
+    top: auto;
+
+    left: 22px;
+    right: 22px;
+    bottom: 62px;
+
+    transform: none;
+
+    max-width: none;
+  }
+
+
+  .slide-content span {
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+
+  .slide-content h1 {
+    margin-bottom: 12px;
+
+    font-size: 38px;
+
+    line-height: 1.03;
+  }
+
+
+  .slide-content p {
+    margin-bottom: 20px;
+
+    max-width: 100%;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+  }
+
+
+  .slide-content a {
+    min-height: 44px;
+
+    padding: 0 22px;
+
+    font-size: 13px;
+  }
+
+
+  .arrow {
+    width: 38px;
+    height: 38px;
+
+    top: 42%;
+
+    font-size: 26px;
+  }
+
+
+  .previous {
+    left: 10px;
+  }
+
+
+  .next {
+    right: 10px;
+  }
+
+
+  .indicators {
+    bottom: 18px;
+  }
+
+}
+
+
+/* =========================
+   CELULARES CHICOS
+========================= */
+
+@media (max-width: 400px) {
+
+  .slider {
+    height: 520px;
+  }
+
+
+  .slide-content {
+    left: 18px;
+    right: 18px;
+  }
+
+
+  .slide-content h1 {
+    font-size: 32px;
+  }
+
+
+  .slide-content p {
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================
+   PANTALLAS GRANDES
+========================= */
+
+@media (min-width: 1500px) {
+
+  .slider {
+    height: 560px;
+  }
+
+
+  .slide-content {
+    left: 8%;
+  }
+
+}

@@ -1,0 +1,191 @@
+.footer {
+  padding:
+    70px 7% 25px;
+
+  background: #211b1d;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.footer-container {
+  max-width: 1450px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr 1fr;
+
+  gap: 60px;
+}
+
+
+/* =========================
+   MARCA
+========================= */
+
+.footer-brand img {
+  width: 150px;
+  height: 85px;
+
+  margin-bottom: 20px;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: left center;
+}
+
+
+.footer-brand p {
+  max-width: 320px;
+
+  margin: 0;
+
+  color: #d8cdd0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   COLUMNAS
+========================= */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.footer-column h3 {
+  margin: 0 0 8px;
+
+  color: #f2a7b7;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+.footer-column a {
+  color: #d8cdd0;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.footer-column a:hover {
+  color: #f2a7b7;
+
+  transform: translateX(3px);
+}
+
+
+.footer-column p {
+  margin: 0;
+
+  color: #a99da0;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   PARTE INFERIOR
+========================= */
+
+.footer-bottom {
+  max-width: 1450px;
+
+  margin:
+    55px auto 0;
+
+  padding-top: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top:
+    1px solid rgba(242, 167, 183, 0.15);
+
+  color: #9d9194;
+
+  font-size: 12px;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .footer-container {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+  .footer {
+    padding:
+      55px 25px 25px;
+  }
+
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    gap: 36px;
+  }
+
+
+  .footer-brand img {
+    width: 130px;
+    height: 75px;
+  }
+
+
+  .footer-bottom {
+    margin-top: 40px;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+}

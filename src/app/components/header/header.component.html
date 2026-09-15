@@ -1,0 +1,48 @@
+<header class="header">
+
+  <a
+    href="/"
+    class="logo"
+    aria-label="Ir al inicio"
+  >
+    <img
+      src="/logo/fran-logo.png"
+      alt="Fran Indumentaria"
+    >
+  </a>
+
+
+  <div class="search">
+
+    <input
+      type="text"
+      placeholder="¿Qué estás buscando?"
+      [(ngModel)]="busqueda"
+      (keyup.enter)="buscar()"
+    >
+
+    <button
+      type="button"
+      aria-label="Buscar"
+      (click)="buscar()"
+    >
+      🔍
+    </button>
+
+  </div>
+
+
+  <div class="header-actions">
+
+    <a
+      href="https://wa.me/5493884605421"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-link"
+    >
+      WhatsApp
+    </a>
+
+  </div>
+
+</header>

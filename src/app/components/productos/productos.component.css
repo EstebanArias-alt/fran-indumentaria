@@ -1,0 +1,170 @@
+.productos {
+  padding: 80px 7% 95px;
+
+  background: #fff9f7;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.section-header {
+  max-width: 650px;
+
+  margin: 0 auto 40px;
+
+  text-align: center;
+}
+
+
+.section-header span {
+  color: #a94f66;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.section-header h2 {
+  margin: 10px 0;
+
+  color: #211b1d;
+
+  font-size:
+    clamp(
+      30px,
+      4vw,
+      43px
+    );
+}
+
+
+.section-header p {
+  color: #7b6f72;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.products-container {
+  max-width: 1350px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =========================
+   VER CATÁLOGO COMPLETO
+========================= */
+
+.ver-todos {
+  margin-top: 40px;
+
+  text-align: center;
+}
+
+
+.ver-todos a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+
+  border: 1px solid #d9899b;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #a94f66;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.ver-todos a:hover {
+  background: #d9899b;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .products-container {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .productos {
+    padding:
+      60px 20px 75px;
+  }
+
+
+  .products-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+}
+
+
+@media (max-width: 470px) {
+
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  .ver-todos {
+    margin-top: 30px;
+  }
+
+
+  .ver-todos a {
+    width: 100%;
+  }
+
+}
